@@ -6,11 +6,11 @@ let students = [
      {name: 'Niki', cohort: 'June'},
      {name: 'Boris', cohort: 'June'},
 ];
-
+/*
 for (var student in students) {
      //console.log(students[student]);
      console.log('name: ${student.name}, cohort: ${student.cohort}');
-}
+}*/
 for (var i = 0; i < students.length; i++) {
      console.log('Name: '+ students[i].name + ',' + "Cohort: " + students[i].cohort);
 }
