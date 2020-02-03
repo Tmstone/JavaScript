@@ -13,7 +13,16 @@
            $.get('https://opentdb.com/api.php?amount=3&category=19&difficulty=easy&type=boolean', function(data) {
                category = data.results;
                console.log(category);
+            
+            for(var i = 0; i<category.length; i++){
+                console.log(category[i].category)
+                console.log(category[i].question)
+                console.log(category[i].correct_answer)
+                var topic = category[i].category
+             }
+           $('#topicOne').html(topic)
            });
+           
         });
     </script>
 </head>
@@ -32,7 +41,7 @@
             <div class="section">
                 <div class="row">
                     <div class="col-4">
-                        <h3>Geography</h3>
+                        <h3> <span id="topicOne"></span></h3>
                     </div>
                     <div class="col-4">
                         <h3>Entertainment</h3>
