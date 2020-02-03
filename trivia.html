@@ -8,35 +8,79 @@
     <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
     <title>Trivia</title>
     <script>
-        $(document).ready(function(){
-             
+        $(document).ready(function() {
+            var category;
+           $.get('https://opentdb.com/api.php?amount=3&category=19&difficulty=easy&type=boolean', function(data) {
+               category = data.results;
+               console.log(category);
+           });
         });
     </script>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Triva Night</h1>
-            <h1> <span>*</span>Points</h1>
-            <div class="section">
-                <h3>Geography</h3>
-                <p> <span>200</span> </p>
-                <p> <span>300</span> </p>
-                <p> <span>400</span> </p>
-            </div>
-            <div class="section">
-                <h3>Entertainment</h3>
-                <p> <span>200</span> </p>
-                <p> <span>300</span> </p>
-                <p> <span>400</span> </p>
-            </div>
-            <div class="section">
-                <h3>Science</h3>
-                <p> <span>200</span> </p>
-                <p> <span>300</span> </p>
-                <p> <span>400</span> </p>
+            <div class="row">
+                <div class="col-6">
+                    <h1>Triva Night</h1>
+                </div>
+                <div class="col-4">
+                    <h1> <span>*</span>Points</h1>
+                </div>
             </div>
         </div>
+            <div class="section">
+                <div class="row">
+                    <div class="col-4">
+                        <h3>Geography</h3>
+                    </div>
+                    <div class="col-4">
+                        <h3>Entertainment</h3>
+                    </div>
+                    <div class="col-4">
+                        <h3>Science</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="row">
+                    <div class="col-4">
+                        <p> <span id="geoOne">200</span></p>
+                    </div>
+                    <div class="col-4">
+                        <p> <span>200</span></p>
+                    </div>
+                    <div class="col-4">
+                        <p> <span>200</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="row">
+                    <div class="col-4">
+                        <p> <span>300</span></p>
+                    </div>
+                    <div class="col-4">
+                        <p> <span>300</span></p>
+                    </div>
+                    <div class="col-4">
+                        <p> <span>300</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="row">
+                    <div class="col-4">
+                        <p> <span>400</span></p>
+                    </div>
+                    <div class="col-4">
+                        <p> <span>400</span></p>
+                    </div>
+                    <div class="col-4">
+                        <p> <span>400</span></p>
+                    </div>
+                </div>
+            </div>
     </div>
 </body>
 </html>
