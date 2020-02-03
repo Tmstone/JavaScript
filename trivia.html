@@ -13,14 +13,55 @@
            $.get('https://opentdb.com/api.php?amount=3&category=19&difficulty=easy&type=boolean', function(data) {
                category = data.results;
                console.log(category);
-            
+            /*
             for(var i = 0; i<category.length; i++){
                 console.log(category[i].category)
                 console.log(category[i].question)
                 console.log(category[i].correct_answer)
                 var topic = category[i].category
-             }
-           $('#topicOne').html(topic)
+            }
+            */ 
+            //getting data from the api 
+            var topic = category[0].category
+            var qOne = category[0].question
+            var qTwo = category[1].question
+            var qThree = category[2].question
+            var aOne = category[0].correct_answer
+            var aTwo = category[1].correct_answer
+            var aThree = category[2].correct_answer
+            //Testing api 
+            console.log(qTwo)
+            console.log(aTwo)
+
+            $('#topicOne').html(topic)
+            $('#catOne').html(qOne)
+            $('#catTwo').html(qTwo)
+            $('#catThree').html(qThree)
+            
+            //write event functions here
+
+           //game variables
+           score = 0;
+           choice ="";
+
+           if (choice == aOne) {
+            score += 100;
+           }
+           else if (choice == aTwo) {
+            score += 200;
+           }    
+           else if (choice == aThree) {
+               score += 300;
+           }
+           else {   
+               alert('Wrong Answer!');
+               score = score - 100;
+           }
+           
+           //update score
+           $('#score').html(score)
+        
+
            });
            
         });
@@ -34,7 +75,7 @@
                     <h1>Triva Night</h1>
                 </div>
                 <div class="col-4">
-                    <h1> <span>*</span>Points</h1>
+                    <h1> <span id="score"></span> Points</h1>
                 </div>
             </div>
         </div>
@@ -54,7 +95,9 @@
             <div class="section">
                 <div class="row">
                     <div class="col-4">
-                        <p> <span id="geoOne">200</span></p>
+                        <p> <span id="catOne"></span></p>
+                        <p>True or False</p>
+                        <p></p>
                     </div>
                     <div class="col-4">
                         <p> <span>200</span></p>
@@ -67,7 +110,8 @@
             <div class="section">
                 <div class="row">
                     <div class="col-4">
-                        <p> <span>300</span></p>
+                        <p> <span id="catTwo"></span></p>
+                        <p>True or False</p>
                     </div>
                     <div class="col-4">
                         <p> <span>300</span></p>
@@ -80,7 +124,8 @@
             <div class="section">
                 <div class="row">
                     <div class="col-4">
-                        <p> <span>400</span></p>
+                        <p> <span id="catThree"></span></p>
+                        <p>True or False</p>
                     </div>
                     <div class="col-4">
                         <p> <span>400</span></p>
