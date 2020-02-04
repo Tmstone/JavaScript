@@ -9,7 +9,21 @@
     <title>Game of Thrones</title>
     <script>
         $(document).ready(function(){
+            var house;
+            /*$('#baratheon').click(function(){
 
+            })
+            */
+           console.log('house declared');
+           $.get('https://www.anapioficeandfire.com/api/houses/17', function(data) {
+            house = data;
+            console.log(house)
+           })
+           /*
+           function displayHouse(data) {
+               house = data;
+               console.log(house)
+           }*/
         });
     </script>
 </head>
@@ -18,16 +32,16 @@
         <h1>Game of Thrones</h1>
         <div class="row">
             <div class="col-3">
-                <img src="gameofthrones/baratheon.png" alt="" width="225">
+                <img id="baratheon" src="gameofthrones/baratheon.png" alt="House Baratheon" width="225">
             </div>
             <div class="col-3">
-                <img src="gameofthrones/lannister.jpg" alt="" width="225">
+                <img src="gameofthrones/lannister.jpg" alt="House Lannister" width="225">
             </div>
             <div class="col-3">
-                <img src="gameofthrones/stark.jpg" alt="" width="225">
+                <img src="gameofthrones/stark.jpg" alt="House Stark" width="225">
             </div>
             <div class="col-3">
-                <img src="gameofthrones/targaryen.jpg" alt="" width="225">
+                <img src="gameofthrones/targaryen.jpg" alt="House Targaryen" width="225">
             </div>
         </div>
     </div>
