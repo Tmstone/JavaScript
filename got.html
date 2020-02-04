@@ -10,16 +10,29 @@
     <script>
         $(document).ready(function(){
             var house;
-            /*$('#baratheon').click(function(){
-
+            $('#baratheon').click(function(){
+                $.get('https://www.anapioficeandfire.com/api/houses/17', house)
+            function house(data) {
+                house = data
+                console.log(house)
+                $('#name').html(house.name)
+                $('#region').html(house.region)
+                $('#words').html(house.words)
+                //loop through titles
+                for(var i = 0; i< house.titles.length; i++) {
+                    $('#titles').html(house.titles[i])
+                }
+                
+                //console.log(house.titles[0])
+                }
             })
-            */
+            /*
            console.log('house declared');
            $.get('https://www.anapioficeandfire.com/api/houses/17', function(data) {
             house = data;
             console.log(house)
            })
-           /*
+           
            function displayHouse(data) {
                house = data;
                console.log(house)
@@ -42,6 +55,16 @@
             </div>
             <div class="col-3">
                 <img src="gameofthrones/targaryen.jpg" alt="House Targaryen" width="225">
+            </div>
+        </div>
+        <div class="row">
+            <div id="" class="col-8 offset-3">
+                <h3>House Details</h3>
+                <h4>Name: <span id="name"></span></h4>
+                <p>Region: <span id="region"></span></p>
+                <p>Words: <span id="words"></span></p>
+                <p></p>
+                <p>Titles: <span id="titles"></span></p>
             </div>
         </div>
     </div>
