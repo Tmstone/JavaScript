@@ -57,10 +57,19 @@ function Ninja (name) {
         this.health += 10;
         return this;
     }
-
+    //punch() will subtract 5 health from ninja passed in
+    Ninja.prototype.punch = function(name) {
+        this.health -=5 ;
+        console.log(this.name + 'was punched by ' + name + ' lost 5 points.')
+        return this;
+    }
+    //kick() Kick will subtract 15 Health for each point of Strength the calling Ninja has.
 
 }
-var Mike = new Ninja('Mike', 175);
+const Mike = new Ninja('Mike');
 Mike.sayName();
 Mike.drinkSake();
 Mike.showStats();
+
+const Jake = new Ninja('Jake');
+Jake.punch(Mike);
