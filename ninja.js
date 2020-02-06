@@ -40,10 +40,18 @@ function Ninja (name) {
     var speed = 3;
     var strength = 3;
     //showStats() - This should show the Ninja's name, strength, speed, and health.
-    this.showStats = function() {
-        console.log('Name: ' + this.name + ', Health: ' + this.health + ', Speed:' + speed + ', Strength: ' + strength);
-        return this;
+        this.showStats = function() {
+            console.log('Name: ' + this.name + ', Health: ' + this.health + ', Speed:' + speed + ', Strength: ' + strength);
+            return this;
         //stats();
+        }
+        //kick() Kick will subtract 15 Health for each point of Strength the calling Ninja has.
+        this.kick() = function(ninja) {
+            const damage  = strength * 5;
+            ninja.health -= damage;
+            console.log(ninja.name + ' was kicked by ' + this.name + ' and lost ' + ninja.health + ' health.');
+            return this;
+        }
     }
     //writing methods
     //sayName() - This should log that Ninja's name to the console.
@@ -58,14 +66,14 @@ function Ninja (name) {
         return this;
     }
     //punch() will subtract 5 health from ninja passed in
-    Ninja.prototype.punch = function(name) {
-        this.health -=5 ;
-        console.log(this.name + 'was punched by ' + name + ' lost 5 points.')
+    Ninja.prototype.punch = function(ninja) {
+        ninja.health -=5 ;
+        console.log(ninja.name + ' was punched by ' + this.name + 'and lost 5 points.');
+        console.log()
         return this;
     }
-    //kick() Kick will subtract 15 Health for each point of Strength the calling Ninja has.
+    
 
-}
 const Mike = new Ninja('Mike');
 Mike.sayName();
 Mike.drinkSake();
@@ -73,3 +81,4 @@ Mike.showStats();
 
 const Jake = new Ninja('Jake');
 Jake.punch(Mike);
+Mike.kick(Jake);
