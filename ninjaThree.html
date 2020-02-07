@@ -11,9 +11,18 @@
     */
     class Ninja {
         constructor(name){
-            
+            this.name = name;
+            this.health = 100;
+            this.speed = 3;
+            this.strength = 3;
         }
+        showStats() {
+            console.log(`Name: ${this.name}, Health: ${this.health}, Strength: ${this.strength}, Speed: ${this.speed} `);
+        }
+
     }
+    const Mike = new Ninja('Mike');
+    Mike.showStats()
     </script>
 </head>
 <body>
