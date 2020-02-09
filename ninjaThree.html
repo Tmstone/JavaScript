@@ -16,6 +16,7 @@
             this.speed = 3;
             this.strength = 3;
         }
+        //methods of the ninja class
         sayName() {
             console.log(`This ninja's name is ${this.constructor.name}`);
         }
@@ -27,6 +28,9 @@
             return this;
         }
     }
+    /*
+        creating a child class for ninja 
+    */
     class  Sensei extends Ninja {
         constructor(name) {
             super(name);
@@ -36,6 +40,7 @@
                 this.wisdom = 10;
         }
         speakWisdom() {
+            //calling the drink sake method before speaking wisdom
             super.drinkSake();
             console.log("What one programmer can do in one month, two programmers can do in two months.")
         }
