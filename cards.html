@@ -16,7 +16,7 @@
                 this.num = num;
             }
             showMethod() {
-                console.log(`This card suit is ${this.type} of ${this.suit} ${this.num}`);
+                console.log(`This card suit is ${this.constructor.type} of ${this.suit} ${this.num}`);
             }
         }
           /*
@@ -29,7 +29,7 @@
         class Deck extends Card {
             constructor(suit, type, num) {
                 super(suit, type, num);
-                this.deck = 52;
+                    this.deck = 52;
             }
             shuffleDeck() {
                 console.log('This is the shuffle method.');
@@ -39,7 +39,7 @@
             }
             deal() {
                 console.log('This is the deal method.');
-                console.log(`${card.suit}`)
+                super.showMethod();
             }
         }
         
@@ -53,8 +53,8 @@
         CardThree.showMethod();
         //calling the deck method
         DeckOne = new Deck('DeckOne');
-        DeckOne.shuffleDeck();
-        //DeckOne.deal(CardOne);
+        //DeckOne.shuffleDeck();
+        DeckOne.deal(CardOne);
 
     </script>
 </head>
