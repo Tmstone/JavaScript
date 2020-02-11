@@ -63,6 +63,7 @@
             constructor(suit, type, num) {
                 super(suit, type, num, deck);
                 this.name = name;
+                this.hand = [];
             }
             discard() {
                 console.log(`${this.name} discarded a card`);
@@ -80,6 +81,7 @@
         DeckOne = new Deck('DeckOne');
         //DeckOne.shuffleDeck();
         DeckOne.deal(CardOne);
+        
 
     </script>
 </head>
