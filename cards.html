@@ -29,17 +29,19 @@
         class Deck extends Card {
             constructor(suit, type, num) {
                 super(suit, type, num);
-                    this.deck = 52;
+                    this.deck = [];
             }
             shuffleDeck() {
                 console.log('This is the shuffle method.');
             }
             reset() {
+
                 console.log('This is the reset method.');
             }
             deal() {
                 console.log('This is the deal method.');
-                super.showMethod();
+                return this.deck.pop();
+                //super.showMethod();
             }
         }
         /*
