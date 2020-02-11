@@ -68,6 +68,10 @@
             discard() {
                 console.log(`${this.name} discarded a card`);
             }
+            draw(deck) {
+                this.hand.push(deck.deal());
+                return this;
+            }
         }
 
         //Ace = 1, King = 13, Queen = 12, Jack = 11
