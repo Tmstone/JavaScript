@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+function $Dojo(id){
+    this.myID = document.getElementById(id);
+    this.click = function(callback) {
+        this.myID.addEventListener('click', callback);
+    };
+    this.hover = function(hoverin, hoverout) {
+        this.myID.addEventListener("mouseover", hoverin);
+        this.myID.addEventListener("mouseout", hoverout);
+    }
+    return this
+}    
+/*    
+const $Dojo = function(id) {
+    return(function($dojo){
+        $dojo.myID = document.getElementById(id);
+        $dojo.click = function(callback) {
+            this.myID.addEventListener('click', callback);
+        };
+        $dojo.hover = function(hoverin, hoverout) {
+            this.myID.addEventListener(mouseover, hoverin);
+            this.myID.addEventListener(mouseout, hoverout);
+        }
+        return $dojo;
+    })({});
+}
+*/
+$Dojo("#hello").click(function() { console.log("The button was clicked!") });
+$Dojo("someOtherIdForSomeOtherButton").hover(function() { console.log("The button was hovered on!") });
+
+</script>
+<body>
+    <h1>JavaScript Test</h1>
+    <button id="hello">Hello</button>
+</body>
+</html>
