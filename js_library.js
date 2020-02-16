@@ -42,6 +42,7 @@ results = filter(myArray, function(element) {
     return element % 2 === 0; 
 });
 console.log(results);
+
 //reject function
 function reject(array, callback) {
     const results = [];
@@ -88,3 +89,25 @@ function add(num1, num2, num3) {
 console.log(memo);
 
 //refractor loops  and call the function
+
+var _ = {
+    map: function() {
+      //code here;
+    },
+    reduce: function() { 
+      // code here;
+    },
+    find: function() {   
+      // code here;
+    },
+    filter: function() { 
+      // code here;
+    },
+    reject: function() { 
+      // code here;
+    }
+  }
+ // you just created a library with 5 methods!
+ var evens = _.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+ console.log(evens); // if things are working right, this will return [2,4,6].
+  
