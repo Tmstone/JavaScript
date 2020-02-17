@@ -20,7 +20,7 @@ function $Dojo(id){
         this.myID.addEventListener("mouseover", hoverin);
         this.myID.addEventListener("mouseout", hoverout);
     }
-    return this
+    return this;
 }
 /*
 Advanced 
@@ -35,7 +35,7 @@ const $Dojo = function(id) {
             this.myID.addEventListener(mouseout, hoverout);
         }
         return $dojo;
-    })({});
+    })();
 }
 */
 $Dojo("someIdForSomeButton").click(function() { console.log("The button was clicked!") });
