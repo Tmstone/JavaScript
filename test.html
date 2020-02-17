@@ -12,18 +12,20 @@ function $Dojo(id){
     this.click = function(callback) {
         console.log(id)
         this.myID.addEventListener("click", callback);
+        return this;
     };
     this.hover = function(hoverin, hoverout) {
         this.myID.addEventListener("mouseover", hoverin);
         this.myID.addEventListener("mouseout", hoverout);
+        return this;
     }
-    return this;
+    //return this;
 }
-/*   
+ /*
 const $Dojo = function(id) {
-    return (function($dojo){
-        var myID = id;
+    return(function($dojo){
         $dojo.myID = document.getElementById(id);
+        console.log($dojo);
         $dojo.click = function(callback) {
             this.myID.addEventListener('click', callback);
         };
@@ -32,10 +34,10 @@ const $Dojo = function(id) {
             this.myID.addEventListener(mouseout, hoverout);
         };
         return $dojo;
-    }());
+    })();
 };
 */
-$Dojo("hello").click(function() { console.log("The button was clicked!") });
+$Dojo("hello").click(function() { console.log("The button was clicked!") }); 
 $Dojo("NavOne").hover(function() { console.log("The button was hovered on!") });
 
 </script>
