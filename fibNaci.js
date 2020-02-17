@@ -1,12 +1,14 @@
 function fib() {
     // Some variables here
-    let a = 1, b= 0, temp = 1;
+    let a = 1, b= 0;
     function nacci() {
       // do something to those variables here
-      for(let i = 0; i < num; i++) {}
-        temp = a + b;
+      const temp = a;
+      //for(let i = 0; i < num; i++) {}
+        //temp = a + b;
+        console.log(b)
         a = b;
-        b = temp;
+        b = temp + a;
     }
     return nacci
   }
