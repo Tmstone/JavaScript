@@ -29,9 +29,7 @@
                 $.get('https://www.anapioficeandfire.com/api/houses/378', house) 
                 house(name);
             })
-
-
-           
+      
            function house(data) {
                 house = data
                 console.log(house)
@@ -45,15 +43,9 @@
                     $('#titles').append(titles[i])
                 }
                 $('#coat').html(house.coatOfArms)
-                }
-           
+                }           
         });
-        /*
-        Stark: 362
-        Targaryen: 378
-        Lannister: 229
-        Baratheon: 17
-        */
+
     </script>
 </head>
 <body>
