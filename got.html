@@ -9,7 +9,7 @@
     <title>Game of Thrones</title>
     <script>
         $(document).ready(function(){
-            var house;
+            //var house;
             $('#baratheon').click(function(){
                 $.get('https://www.anapioficeandfire.com/api/houses/17', house)
                 house(name);
@@ -25,6 +25,11 @@
                 house(name);
             })
 
+            $('#targaryen').click(function(){
+                $.get('https://www.anapioficeandfire.com/api/houses/378', house) 
+                house(name);
+            })
+
 
            
            function house(data) {
@@ -34,10 +39,10 @@
                 $('#region').html(house.region)
                 $('#words').html(house.words)
 
-                //loop through titles
-                for(var i = 0; i< house.titles.length; i++) {
+                /*loop through titles
+                for(var i = 0; i < house.titles.length; i++) {
                     $('#titles').append(house.titles[i])
-                }
+                }*/
                 $('#coat').html(house.coatOfArms)
                 //console.log(house.titles[0])
                 }
