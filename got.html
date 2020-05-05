@@ -39,12 +39,12 @@
                 $('#region').html(house.region)
                 $('#words').html(house.words)
 
-                /*loop through titles
-                for(var i = 0; i < house.titles.length; i++) {
-                    $('#titles').append(house.titles[i])
-                }*/
+                //loop through titles
+                var titles = house.titles
+                for(var i = 0; i < titles.length; i++) {
+                    $('#titles').append(titles[i])
+                }
                 $('#coat').html(house.coatOfArms)
-                //console.log(house.titles[0])
                 }
            
         });
