@@ -12,13 +12,20 @@
             var house;
             $('#baratheon').click(function(){
                 $.get('https://www.anapioficeandfire.com/api/houses/17', house)
-                house(data);
+                house(name);
             })
             
            $('#lannister').click(function(){
                 $.get('https://www.anapioficeandfire.com/api/houses/229', house) 
-                house(data);
+                house(name);
             })
+
+            $('#stark').click(function(){
+                $.get('https://www.anapioficeandfire.com/api/houses/362', house) 
+                house(name);
+            })
+
+
            
            function house(data) {
                 house = data
