@@ -12,7 +12,15 @@
             var house;
             $('#baratheon').click(function(){
                 $.get('https://www.anapioficeandfire.com/api/houses/17', house)
-            function house(data) {
+                house(data);
+            })
+            
+           $('#lannister').click(function(){
+                $.get('https://www.anapioficeandfire.com/api/houses/229', house) 
+                house(data);
+            })
+           
+           function house(data) {
                 house = data
                 console.log(house)
                 $('#name').html(house.name)
@@ -21,24 +29,19 @@
 
                 //loop through titles
                 for(var i = 0; i< house.titles.length; i++) {
-                    $('#titles').html(house.titles[i])
+                    $('#titles').append(house.titles[i])
                 }
                 $('#coat').html(house.coatOfArms)
                 //console.log(house.titles[0])
                 }
-            })
-            /*
-           console.log('house declared');
-           $.get('https://www.anapioficeandfire.com/api/houses/17', function(data) {
-            house = data;
-            console.log(house)
-           })
            
-           function displayHouse(data) {
-               house = data;
-               console.log(house)
-           }*/
         });
+        /*
+        Stark: 362
+        Targaryen: 378
+        Lannister: 229
+        Baratheon: 17
+        */
     </script>
 </head>
 <body>
@@ -49,13 +52,13 @@
                 <img id="baratheon" src="gameofthrones/baratheon.png" alt="House Baratheon" width="225">
             </div>
             <div class="col-3">
-                <img src="gameofthrones/lannister.jpg" alt="House Lannister" width="225">
+                <img id="lannister" src="gameofthrones/lannister.jpg" alt="House Lannister" width="225">
             </div>
             <div class="col-3">
-                <img src="gameofthrones/stark.jpg" alt="House Stark" width="225">
+                <img id="stark" src="gameofthrones/stark.jpg" alt="House Stark" width="225">
             </div>
             <div class="col-3">
-                <img src="gameofthrones/targaryen.jpg" alt="House Targaryen" width="225">
+                <img id="targaryen" src="gameofthrones/targaryen.jpg" alt="House Targaryen" width="225">
             </div>
         </div>
         <div class="row">
